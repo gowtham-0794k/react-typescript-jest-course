@@ -1,15 +1,16 @@
 import React from "react";
-
-
+import Button from "./atomic/atom/button/Button";
 
 export class Home extends React.Component {
-
-
-    render(){
-        return(
-            <div>
-                Welcome to the Home page!
-            </div>
-        )
-    }
+  render() {
+    const buttonProps = {
+      id: 1,
+      label: "Login",
+    };
+    return (
+      <div className="pt-2">
+        <Button label="Login" />
+      </div>
+    );
+  }
 }
