@@ -9,6 +9,7 @@ import { Home } from './Home';
 import { Profile } from './Profile';
 import { Spaces } from './spaces/Spaces'
 import { DataService } from '../services/DataService';
+import Atomic from './Atomic';
 
 interface AppState{
   user: User | undefined
@@ -42,6 +43,7 @@ export class App extends React.Component<{}, AppState>{
         <Router history={history}>
           <div>
             <Navbar user={this.state.user}/>
+            <div style={{margin:"10px"}}>
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route exact path='/login'>
@@ -52,8 +54,10 @@ export class App extends React.Component<{}, AppState>{
               </Route>
               <Route exact path='/spaces'>
                 <Spaces dataService={this.dataService}/>
+              </Route><Route exact path='/atomic'>
+                <Atomic/>
               </Route>
-            </Switch>
+            </Switch></div>
           </div>
 
         </Router>

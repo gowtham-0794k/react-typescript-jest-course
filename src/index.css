@@ -14,7 +14,6 @@ code {
 
 .wrapper {
   margin: auto;
-  width: 70%;
 }
 
 /* Add a black background color to the top navigation */
@@ -41,6 +40,6 @@ code {
 
 /* Add a color to the active/current link */
 .navbar a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }

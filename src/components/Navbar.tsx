@@ -22,6 +22,7 @@ export class Navbar extends React.Component<{
                 <Link to='/'> Home</Link>
                 <Link to='/profile'> Profile</Link>
                 <Link to='/spaces'> Spaces</Link>
+                <Link to='/atomic'> Atomic </Link>
                 {loginLogOut}
             </div>
         )
