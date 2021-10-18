@@ -1,7 +1,7 @@
-import React, { SyntheticEvent } from "react";
-import { User } from "../model/Model";
-import { AuthService } from "../services/AuthService";
-import history from "../utils/history";
+import React, { SyntheticEvent } from 'react';
+import { User } from '../model/Model';
+import { AuthService } from '../services/AuthService';
+import history from '../utils/history';
 
 interface LoginProps {
   authService: AuthService;
@@ -20,8 +20,8 @@ interface CustomEvent {
 
 export class Login extends React.Component<LoginProps, LoginState> {
   state: LoginState = {
-    userName: "",
-    password: "",
+    userName: '',
+    password: '',
     loginAttenpted: false,
     loginSuccesfull: false,
   };
@@ -44,7 +44,7 @@ export class Login extends React.Component<LoginProps, LoginState> {
     if (result) {
       this.setState({ loginSuccesfull: true });
       this.props.setUser(result);
-      history.push("/profile");
+      history.push('/profile');
     } else {
       this.setState({ loginSuccesfull: false });
     }
@@ -72,10 +72,10 @@ export class Login extends React.Component<LoginProps, LoginState> {
           <input
             value={this.state.password}
             onChange={(e) => this.setPassword(e)}
-            type="password"
+            type='password'
           />
           <br />
-          <input type="submit" value="Login" />
+          <input type='submit' value='Login' />
         </form>
         {loginMessage}
       </div>
