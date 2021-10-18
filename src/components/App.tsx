@@ -1,15 +1,15 @@
-import React from "react";
-import { User } from "../model/Model";
-import { AuthService } from "../services/AuthService";
-import { Login } from "./Login";
-import { Router, Route, Switch } from "react-router-dom";
-import history from "../utils/history";
-import { Navbar } from "./Navbar";
-import { Home } from "./Home";
-import { Profile } from "./Profile";
-import { Spaces } from "./spaces/Spaces";
-import { DataService } from "../services/DataService";
-import Bruno from "./bruno/Bruno";
+import React from 'react';
+import { User } from '../model/Model';
+import { AuthService } from '../services/AuthService';
+import { Router, Route, Switch } from 'react-router-dom';
+import history from '../utils/history';
+import { Home } from './Home';
+import { Profile } from './Profile';
+import { Spaces } from './spaces/Spaces';
+import { DataService } from '../services/DataService';
+import Atomic from './Atomic';
+import Login from './Auth/Login/Login';
+import { Navbar } from './Navbar';
 
 interface AppState {
   user: User | undefined;
@@ -32,33 +32,35 @@ export class App extends React.Component<{}, AppState> {
     this.setState({
       user: user,
     });
-    console.log("setting the user!: " + user);
+    console.log('setting the user!: ' + user);
   }
 
   render() {
     return (
-      <div className="wrapper">
+      <div className='wrapper'>
         <Router history={history}>
           <div>
             <Navbar user={this.state.user} />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login">
-                <Login authService={this.authService} setUser={this.setUser} />
-              </Route>
-              <Route exact path="/profile">
-                <Profile
-                  authService={this.authService}
-                  user={this.state.user}
-                />
-              </Route>
-              <Route exact path="/spaces">
-                <Spaces dataService={this.dataService} />
-              </Route>
-              <Route exact path="/bruno">
-                <Bruno />
-              </Route>
-            </Switch>
+            <div style={{ margin: '10px' }}>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/login'>
+                  <Login />
+                </Route>
+                <Route exact path='/profile'>
+                  <Profile
+                    authService={this.authService}
+                    user={this.state.user}
+                  />
+                </Route>
+                <Route exact path='/spaces'>
+                  <Spaces dataService={this.dataService} />
+                </Route>
+                <Route exact path='/atomic'>
+                  <Atomic />
+                </Route>
+              </Switch>
+            </div>
           </div>
         </Router>
       </div>

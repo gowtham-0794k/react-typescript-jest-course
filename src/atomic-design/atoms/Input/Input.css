@@ -1,0 +1,6 @@
+.removePlaceHolder:focus::placeholder {
+  color: transparent;
+}
+/* input:focus::placeholder {
+  color: transparent;
+} */
