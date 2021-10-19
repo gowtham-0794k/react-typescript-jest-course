@@ -10,6 +10,7 @@ import { Spaces } from './spaces/Spaces';
 import { DataService } from '../services/DataService';
 import Atomic from './Atomic';
 import Login from './Auth/Login/Login';
+import Bruno from './Bruno/Bruno';
 
 interface AppState {
   user: User | undefined;
@@ -32,7 +33,6 @@ export class App extends React.Component<{}, AppState> {
     this.setState({
       user: user,
     });
-    console.log('setting the user!: ' + user);
   }
 
   render() {
@@ -58,6 +58,9 @@ export class App extends React.Component<{}, AppState> {
                 </Route>
                 <Route exact path='/atomic'>
                   <Atomic />
+                </Route>
+                <Route exact path='/bruno'>
+                  <Bruno />
                 </Route>
               </Switch>
             </div>

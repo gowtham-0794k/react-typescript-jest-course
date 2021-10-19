@@ -64,6 +64,10 @@ export class Navbar extends React.Component<{
                   {' '}
                   Atomic{' '}
                 </Link>
+                <Link className='nav-link' to='/bruno'>
+                  {' '}
+                  Bruno{' '}
+                </Link>
                 {loginLogOut}
               </div>
             </div>
